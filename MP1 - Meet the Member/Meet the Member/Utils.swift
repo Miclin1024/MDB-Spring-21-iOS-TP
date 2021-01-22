@@ -49,10 +49,13 @@ class QuestionProvider {
     }
     
     struct Question {
+        // The image
         let image: UIImage
         
+        // The name
         let answer: String
         
+        // Answer + 3 other random names.
         let choices: [String]
     }
 }

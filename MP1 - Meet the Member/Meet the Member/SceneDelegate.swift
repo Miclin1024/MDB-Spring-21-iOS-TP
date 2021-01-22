@@ -17,7 +17,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         
-        // Programmatically bypass storyboard, make WelcomeVC the initial entry point
+        // MARK: STEP 4: Setup entry point
+        // Just read the code. You probably won't understand what it means, and that's ok. Just keep in mind what it does:
+        // Makes StartVC the initial VC of our app. After that, use ⌘+r to run the app.
+        // You should see the StartVC that you created in step 1, 2, and 3.
+        // Try tapping the button to see if you can go the MainVC (there's nothing there yet, but we will fix that in a moment)
+        //
+        // Programmatically bypass storyboard, make StartVC the entry point
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: UIScreen.main.bounds)
         window!.windowScene = windowScene

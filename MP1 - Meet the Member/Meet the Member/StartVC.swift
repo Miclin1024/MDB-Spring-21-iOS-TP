@@ -7,6 +7,19 @@
 
 import UIKit
 
+// MARK: STEP 0: Before We Start
+// Before we kick off our first project. I'd like you know that
+// by no means you should feel obligated to follow these steps.
+// It's just a order of doing things that I think may help you
+// better utilize the starters code. So feel free to explore and
+// write your own stuff anywhere else or double back to the
+// steps that you've finished - do it anyway you like - but
+// please make sure that you read and understand the code/comments,
+// they contain information that will be super helpful later on in
+// the course. The project is designed to be challenging. So
+// the rule of thumb is: if you ever get stuck on something for
+// more than 30 minutes and still have no clue, ask for help!
+
 class StartVC: UIViewController {
     
     private let welcomeLabel: UILabel = {
@@ -36,7 +49,16 @@ class StartVC: UIViewController {
         
         button.setTitleColor(.blue, for: .normal)
         
-        // TODO: Your customization
+        // MARK: STEP 1: UIButton Customization
+        // Create you own customized UIButton.
+        //
+        // Hints: Wondering what customizations are available?
+        // Type out `button.` and Swift will show you a bunch of options, then
+        // keep typing to narrow it down (try 'background').
+        // You can also go to https://developer.apple.com/documentation/uikit/uibutton#topics
+        // where you will find all the available APIs.
+        
+        // MARK: >> Your Code Here <<
         
         button.translatesAutoresizingMaskIntoConstraints = false
         
@@ -47,6 +69,11 @@ class StartVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white // == UIColor(expected type).white
         
+        // MARK: STEP 2: Subviews and Constraints
+        // Read through the following code and make sure that you understand
+        // what it's doing. Then add your constraints for the start button
+        // in the *second* NSLayoutConstraint.activate([]).
+        //
         // Add our label as a subview of the root UIView of WelcomeVC
         // -------view hierarchy--------
         //
@@ -78,7 +105,7 @@ class StartVC: UIViewController {
             welcomeLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50)
         ])
         
-        // Again, add the start button as a subview of the root UIView of WelcomeVC
+        // Again, add the start button as a subview of the root UIView of WelcomeVC.
         // -------view hierarchy--------
         //
         // WelcomeVC -> View (root)
@@ -89,19 +116,27 @@ class StartVC: UIViewController {
         // -----------------------------
         view.addSubview(startButton)
         
+        // A view must be in the hierarchy before constraints are added.
         NSLayoutConstraint.activate([
-            // TODO: Add the constraints for the startButton
+            // MARK: >> Your Code Here <<
         ])
         
-        // Add the callback to our startButton
+        // MARK: STEP 3: Adding Callbacks
+        // Just read the code.
+        //
+        // This will add the didTapStart as the *callback* function of startButton's touchUpInside event.
+        // Notice the @objc notation in the function declaration. It is required if we want to
+        // reference the function using selector.
         startButton.addTarget(self, action: #selector(didTapStart(_:)), for: .touchUpInside)
     }
     
-    // Trivia: Why do we need @objc here
+    // Trivia: Why do we need the @objc here
     // https://www.hackingwithswift.com/example-code/language/what-is-the-objc-attribute
     @objc func didTapStart(_ sender: UIButton) {
-        // Present the MainVC
-        present(MainVC(), animated: true, completion: nil)
+        // Initialize an instance of MainVC
+        let vc = MainVC()
+        // Use the present function to modally present the MainVC
+        present(vc, animated: true, completion: nil)
     }
 }
 
