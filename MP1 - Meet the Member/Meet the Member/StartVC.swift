@@ -8,7 +8,7 @@
 import UIKit
 
 // MARK: STEP 0: Before We Start
-// Before we kick off our first project. I'd like you know that
+// Before we kick off our first project. You should know that
 // by no means you should feel obligated to follow these steps.
 // It's just a order of doing things that I think may help you
 // better utilize the starters code. So feel free to explore and

@@ -11,7 +11,7 @@ import UIKit
 class MainVC: UIViewController {
     
     // Create a timer, call timerCallback every one second.
-    let timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerCallback), userInfo: nil, repeats: true)
+    let timer: Timer? = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerCallback), userInfo: nil, repeats: true)
     
     // MARK: STEP 8: UI Customization
     // Customize your imageView and buttons. Run the app to see how they look.
@@ -46,7 +46,14 @@ class MainVC: UIViewController {
         
     }()
     
-    // TODO: Add a stats button here
+    // MARK: STEP 12: Stats Button
+    // Follow the examples you've learned so far, initialize a
+    // stats button used for going to the stats screen, add it
+    // as a subview inside the viewDidLoad and set up the
+    // constraints. Finally, connect the button's with the @objc
+    // function didTapStats.
+    
+    // MARK: >> Your Code Here <<
     
     override func viewDidLoad() {
         view.backgroundColor = .white
@@ -76,12 +83,21 @@ class MainVC: UIViewController {
         // cleaner way to do this, see if you can figure it out.
         
         // MARK: >> Your Code Here <<
+        
+        
+        // MARK: STEP 12: Stats Button
+        // Follow instructions at :49
+        
+        // MARK: >> Your Code Here <<
     }
     
     // What's the difference between viewDidLoad() and
     // viewWillAppear()? What about viewDidAppear()?
     override func viewWillAppear(_ animated: Bool) {
-        //
+        // MARK: STEP 15: Resume Game
+        // Restart the timer when view reappear.
+        
+        // MARK: >> Your Code Here <<
     }
     
     func getNextQuestion() {
@@ -121,8 +137,9 @@ class MainVC: UIViewController {
         // you are gonna write. The 4 buttons should be able to share
         // the same callback. Add instance properties and/or methods
         // to the class if necessary. The instruction here is
-        // intentionally vague as I'd like to keep this open ended.
-        // You may need to come back and rework this step later on.
+        // intentionally vague as I'd like you to decide what you
+        // have to do. You may need to come back and rework this
+        // step later on.
         //
         // Hint: You can use `sender.tag` to identify which button is tapped
         
@@ -130,11 +147,16 @@ class MainVC: UIViewController {
     }
     
     @objc func didTapStats(_ sender: UIButton) {
-        let vc = StatsVC()
         
-        // TODO: Complete the callback when tapping stats button
-        // What is the information you need to pass
-        // into StatsVC
+        let vc = StatsVC(data: "Hello")
+        
+        vc.dataWeNeedExample1 = "Hello"
+        
+        // MARK: STEP 13: StatsVC Data
+        // Follow instructions in StatsVC. You also need to invalidate
+        // the timer instance to pause game before going to StatsVC.
+        
+        // MARK: >> Your Code Here <<
         
         present(vc, animated: true, completion: nil)
     }
