@@ -125,7 +125,8 @@ class MainVC: UIViewController {
         // MARK: STEP 11: Timer's Logic
         // Complete the callback for the one-second timer. Add instance
         // properties and/or methods to the class if necessary. Again,
-        // the instruction here is intentionally vague, and you may need
+        // the instruction here is intentionally vague, so read the spec
+        // and take some time to plan. you may need
         // to come back and rework this step later on.
         
         // MARK: >> Your Code Here <<
@@ -138,8 +139,8 @@ class MainVC: UIViewController {
         // the same callback. Add instance properties and/or methods
         // to the class if necessary. The instruction here is
         // intentionally vague as I'd like you to decide what you
-        // have to do. You may need to come back and rework this
-        // step later on.
+        // have to do based on the spec. You may need to come back
+        // and rework this step later on.
         //
         // Hint: You can use `sender.tag` to identify which button is tapped
         
@@ -160,4 +161,9 @@ class MainVC: UIViewController {
         
         present(vc, animated: true, completion: nil)
     }
+    
+    // MARK: STEP 16:
+    // Read the spec again and run the app. Did you cover everything
+    // mentioned in it? Play around it for a bit, see if you can
+    // uncover any bug. Is there anything else you want to add?
 }

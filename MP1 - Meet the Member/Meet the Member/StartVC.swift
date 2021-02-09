@@ -12,12 +12,13 @@ import UIKit
 // by no means you should feel obligated to follow these steps.
 // It's just a order of doing things that I think may help you
 // better utilize the starters code. So feel free to explore and
-// write your own stuff anywhere else or double back to the
-// steps that you've finished - do it anyway you like - but
-// please make sure that you read and understand the code/comments,
-// they contain information that will be super helpful later on in
-// the course. The project is designed to be challenging. So
-// the rule of thumb is: if you ever get stuck on something for
+// write your own stuff anywhere else or circle back to the
+// steps that you've finished - do it anyway you like, as long as
+// you follow the specs. But please make sure that you read and
+// understand the code/comments, they contain information that will
+// be super helpful in the future. The project is designed to
+// be challenging. So budget your time. The general rule of thumb
+// for asking question: if you ever get stuck on something for
 // more than 30 minutes and still have no clue, ask for help!
 
 class StartVC: UIViewController {
