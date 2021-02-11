@@ -14,7 +14,7 @@ import UIKit
 // You should consult the spec to see what needs to be done.
 // These steps are just a order of doing things that I think may
 // help you navigate through the starters code. So feel free to
-// explore and write your own stuff anywhere else or circle back to
+// explore and write your own stuff anywhere else, or circle back to
 // the steps that you've finished - do it anyway you like, as long as
 // you follow the specs. But please make sure that you read and
 // understand the code/comments, they contain information that will
