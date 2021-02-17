@@ -32,7 +32,7 @@ class QuestionProvider {
     //
     // Why not go from the beginning you might ask. The answer is here: https://www.hackingwithswift.com/example-code/language/how-to-remove-the-first-or-last-item-from-an-array
     func getNextQuestion() -> Question? {
-        if let name = namesToDisplay.popLast(), let image = UIImage(named: name) {
+        if let name = namesToDisplay.popLast(), let image = UIImage(named: name.lowercased().replacingOccurrences(of: " ", with: "")) {
             // Use a set so that we don't randomly add the same names.
             var choices = Set<String>()
             choices.insert(name)
