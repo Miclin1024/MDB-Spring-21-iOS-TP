@@ -10,8 +10,8 @@ import UIKit
 
 class MainVC: UIViewController {
     
-    // Create a timer, call timerCallback every one second.
-    let timer: Timer? = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerCallback), userInfo: nil, repeats: true)
+    // Create a property for our timer, we will initialize it in viewDidLoad
+    var timer: Timer?
     
     // MARK: STEP 8: UI Customization
     // Customize your imageView and buttons. Run the app to see how they look.
@@ -57,6 +57,9 @@ class MainVC: UIViewController {
     
     override func viewDidLoad() {
         view.backgroundColor = .white
+        
+        // Create a timer that calls timerCallback() every one second
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerCallback), userInfo: nil, repeats: true)
         
         // If you don't like the default presentation style,
         // you can change it to full screen too! This way you
