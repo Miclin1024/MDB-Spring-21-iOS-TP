@@ -85,7 +85,7 @@ class StartVC: UIViewController {
         //               \
         //
         // -----------------------------
-        // Constraints can only be created in the same view hierachy. So you have to add the view to
+        // Constraints can only be created in the same view hierarchy. So you have to add the view to
         // subview before creating constraints.
         view.addSubview(welcomeLabel)
         // And add the constraints

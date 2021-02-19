@@ -23,7 +23,7 @@ class StatsVC: UIViewController {
     //
     // Check didTapStats in MainVC.swift on how to use it.
     //
-    // Explaination: This method is fairly straightforward: you
+    // Explanation: This method is fairly straightforward: you
     // declared a property, which will then be populated after
     // the VC is instantiated. As long as you remember to
     // populate it after each instantiation, the implicit forced
@@ -48,7 +48,7 @@ class StatsVC: UIViewController {
     //
     // Check didTapStats in MainVC.swift on how to use it.
     //
-    // Explaination: This method creates a custom initializer which
+    // Explanation: This method creates a custom initializer which
     // takes in the required data. This pattern results in a cleaner
     // initialization and is more readable. Compared with method 1
     // which first initialize the data to nil then populate, in this
@@ -63,7 +63,7 @@ class StatsVC: UIViewController {
     
     // MARK: STEP 14: StatsVC UI
     // You know the drill. Initialize the UI components, add subviews,
-    // and create contraints.
+    // and create constraints.
     //
     // Note: You cannot use self inside these closures because they
     // happens before the instance is fully initialized. If you want
