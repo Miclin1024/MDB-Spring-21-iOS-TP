@@ -156,6 +156,8 @@ class MainVC: UIViewController {
         
         vc.dataWeNeedExample1 = "Hello"
         
+        vc.modalPresentationStyle = .fullScreen
+        
         // MARK: STEP 13: StatsVC Data
         // Follow instructions in StatsVC. You also need to invalidate
         // the timer instance to pause game before going to StatsVC.
