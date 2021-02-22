@@ -8,15 +8,12 @@
 import UIKit
 
 class PokedexVC: UIViewController {
+    
+    let pokemons = PokemonGenerator.shared.getPokemonArray()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-
     }
 }
 
