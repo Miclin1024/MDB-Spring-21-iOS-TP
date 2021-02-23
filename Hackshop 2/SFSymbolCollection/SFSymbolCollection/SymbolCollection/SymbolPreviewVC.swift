@@ -26,7 +26,7 @@ class SymbolPreviewVC: UIViewController {
         super.init(nibName: nil, bundle: nil)
 
         imageView.clipsToBounds = true
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         imageView.backgroundColor = .clear
         imageView.tintColor = .white
         imageView.image = symbol.image
