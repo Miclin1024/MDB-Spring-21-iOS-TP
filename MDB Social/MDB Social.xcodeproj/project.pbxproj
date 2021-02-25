@@ -23,6 +23,7 @@
 		1AF3865625E83E4E0006AE59 /* UIViewController+HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3865525E83E4E0006AE59 /* UIViewController+HideKeyboard.swift */; };
 		1AF3865925E83E720006AE59 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3865825E83E720006AE59 /* UIColor+Hex.swift */; };
 		1AF3865C25E8403E0006AE59 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3865B25E8403E0006AE59 /* AuthTextField.swift */; };
+		1AF3865F25E855BE0006AE59 /* UIColor+ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3865E25E855BE0006AE59 /* UIColor+ColorScheme.swift */; };
 		88D1856E3E3B7E97C54E6FB3 /* Pods_MDB_Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E51BF3FE48C081C2540BE42E /* Pods_MDB_Social.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		1AF3865525E83E4E0006AE59 /* UIViewController+HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+HideKeyboard.swift"; sourceTree = "<group>"; };
 		1AF3865825E83E720006AE59 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		1AF3865B25E8403E0006AE59 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
+		1AF3865E25E855BE0006AE59 /* UIColor+ColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+ColorScheme.swift"; sourceTree = "<group>"; };
 		97EDB17FB89D773DE44696EF /* Pods-MDB Social.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDB Social.debug.xcconfig"; path = "Target Support Files/Pods-MDB Social/Pods-MDB Social.debug.xcconfig"; sourceTree = "<group>"; };
 		BC2F19D1A2D8BB347835EFD1 /* Pods-MDB Social.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDB Social.release.xcconfig"; path = "Target Support Files/Pods-MDB Social/Pods-MDB Social.release.xcconfig"; sourceTree = "<group>"; };
 		E51BF3FE48C081C2540BE42E /* Pods_MDB_Social.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MDB_Social.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,6 +150,7 @@
 			children = (
 				1AF3865525E83E4E0006AE59 /* UIViewController+HideKeyboard.swift */,
 				1AF3865825E83E720006AE59 /* UIColor+Hex.swift */,
+				1AF3865E25E855BE0006AE59 /* UIColor+ColorScheme.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				1AF3862525E816540006AE59 /* User.swift in Sources */,
 				1AF3864E25E83B850006AE59 /* FeedVC.swift in Sources */,
 				1AF385F625E812170006AE59 /* SigninVC.swift in Sources */,
+				1AF3865F25E855BE0006AE59 /* UIColor+ColorScheme.swift in Sources */,
 				1AF3864025E81A9E0006AE59 /* AuthProvider.swift in Sources */,
 				1AF385F225E812170006AE59 /* AppDelegate.swift in Sources */,
 				1AF3864325E81C4A0006AE59 /* Event.swift in Sources */,

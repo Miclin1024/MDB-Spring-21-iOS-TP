@@ -15,8 +15,10 @@ final class AuthTextField: UIView {
         let tf = TextField()
         tf.borderStyle = .none
         tf.backgroundColor = UIColor(hex: "#f7f7f7")
-        tf.textColor = UIColor(hex: "#5f5f5f")
-        tf.font = .systemFont(ofSize: DEFAULT_FONT_SIZE)
+        tf.textColor = .primaryText
+        tf.font = .systemFont(ofSize: DEFAULT_FONT_SIZE, weight: .medium)
+        tf.autocorrectionType = .no
+        tf.autocapitalizationType = .none
         
         tf.translatesAutoresizingMaskIntoConstraints = false
         return tf
@@ -24,7 +26,7 @@ final class AuthTextField: UIView {
     
     let titleLabel: UILabel = {
         let lbl = UILabel()
-        lbl.textColor = UIColor(hex: "#575757")
+        lbl.textColor = .secondaryText
         lbl.numberOfLines = 1
         lbl.textAlignment = .left
         lbl.font = .systemFont(ofSize: DEFAULT_FONT_SIZE-2, weight: .semibold)
