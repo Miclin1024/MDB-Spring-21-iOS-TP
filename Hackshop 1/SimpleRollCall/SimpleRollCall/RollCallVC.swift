@@ -102,6 +102,8 @@ class RollCallVC: UIViewController {
         
         button.tintColor = .white
         
+        button.imageView?.layer.transform = CATransform3DMakeScale(1.1, 1.1, 1.1)
+        
         button.backgroundColor = .systemGreen
         
         button.translatesAutoresizingMaskIntoConstraints = false
