@@ -18,6 +18,7 @@ class FIRAuthProvider {
     enum SignInErrors: Error {
         case wrongPassword
         case userNotFound
+        case invalidEmail
         case internalError
         case errorFetchingUserDoc
         case errorDecodingUserDoc
@@ -27,6 +28,8 @@ class FIRAuthProvider {
     let db = Firestore.firestore()
     
     var currentUser: User?
+    
+    private var userListener: ListenerRegistration?
     
     init() {
         guard let user = auth.currentUser else { return }
@@ -47,9 +50,12 @@ class FIRAuthProvider {
                     completion?(.failure(.wrongPassword))
                 case .userNotFound:
                     completion?(.failure(.userNotFound))
+                case .invalidEmail:
+                    completion?(.failure(.invalidEmail))
                 default:
                     completion?(.failure(.unspecified))
                 }
+                return
             }
             
             guard let authResult = authResult else {
@@ -65,14 +71,18 @@ class FIRAuthProvider {
         return auth.currentUser != nil
     }
     
-    func signOut() {
-        try? auth.signOut()
+    func signOut(completion: (()->Void)? = nil) {
+        do {
+            try auth.signOut()
+            unlinkCurrentUser()
+            completion?()
+        } catch { }
     }
     
     private func linkUser(withuid uid: String,
                           completion: ((Result<User, SignInErrors>)->Void)?) {
         
-        db.collection("users").document(uid).addSnapshotListener { [weak self] docSnapshot, error in
+        userListener = db.collection("users").document(uid).addSnapshotListener { [weak self] docSnapshot, error in
             guard let document = docSnapshot else {
                 completion?(.failure(.errorFetchingUserDoc))
                 return
@@ -85,5 +95,10 @@ class FIRAuthProvider {
             self?.currentUser = user
             completion?(.success(user))
         }
+    }
+    
+    private func unlinkCurrentUser() {
+        userListener?.remove()
+        currentUser = nil
     }
 }

@@ -35,6 +35,12 @@ final class AuthTextField: UIView {
         return lbl
     }()
     
+    var text: String? {
+        get {
+            return textField.text
+        }
+    }
+    
     private var textFieldHeightConstraint: NSLayoutConstraint!
     
     init(frame: CGRect = .zero, title: String) {

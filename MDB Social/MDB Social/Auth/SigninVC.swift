@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import NotificationBannerSwift
 
 class SigninVC: UIViewController {
     
@@ -53,12 +54,13 @@ class SigninVC: UIViewController {
         return tf
     }()
     
-    private let signinButton: UIButton = {
-        let btn = UIButton()
-        btn.backgroundColor = .primary
+    private let signinButton: LoadingButton = {
+        let btn = LoadingButton()
+        btn.layer.backgroundColor = UIColor.primary.cgColor
         btn.setTitle("Sign In", for: .normal)
         btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = .systemFont(ofSize: 16, weight: .bold)
+        btn.isUserInteractionEnabled = true
         
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
@@ -67,6 +69,8 @@ class SigninVC: UIViewController {
     private let contentEdgeInset = UIEdgeInsets(top: 120, left: 40, bottom: 30, right: 40)
     
     private let signinButtonHeight: CGFloat = 44.0
+
+    private var bannerQueue = NotificationBannerQueue(maxBannersOnScreenSimultaneously: 1)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,8 +115,74 @@ class SigninVC: UIViewController {
         ])
         
         signinButton.layer.cornerRadius = signinButtonHeight / 2
+        
+        signinButton.addTarget(self, action: #selector(didTapSignin(_:)), for: .touchUpInside)
     }
 
-
+    @objc func didTapSignin(_ sender: UIButton) {
+        guard let email = emailTextField.text, email != "" else {
+            showErrorBanner(withTitle: "Missing email",
+                            subtitle: "Please provide an email")
+            return
+        }
+        
+        guard let password = passwordTextField.text, password != "" else {
+            showErrorBanner(withTitle: "Missing password",
+                            subtitle: "Please provide a password")
+            return
+        }
+        
+        signinButton.showLoading()
+        FIRAuthProvider.shared.signIn(withEmail: email, password: password) { [weak self] result in
+            
+            defer {
+                self?.signinButton.hideLoading()
+            }
+            
+            switch result {
+            case .success:
+                guard let window = UIApplication.shared
+                        .windows.filter({ $0.isKeyWindow }).first else { return }
+                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+                window.rootViewController = vc
+                let options: UIView.AnimationOptions = .transitionCrossDissolve
+                let duration: TimeInterval = 0.3
+                UIView.transition(with: window, duration: duration, options: options, animations: {}, completion: nil)
+            case .failure(let error):
+                switch error {
+                case .wrongPassword:
+                    self?.showErrorBanner(withTitle: "Incorrect password",
+                                          subtitle: "Please check your password and try again")
+                case .userNotFound:
+                    self?.showErrorBanner(withTitle: "User not found",
+                                          subtitle: "A user with email \(email) doesn't exist")
+                case .internalError:
+                    self?.showErrorBanner(withTitle: "An internal error occured",
+                                          subtitle: "Please try again later")
+                case .invalidEmail:
+                    self?.showErrorBanner(withTitle: "Invalid email",
+                                          subtitle: "Please check your email and try again")
+                default:
+                    return
+                }
+            }
+        }
+    }
+    
+    func showErrorBanner(withTitle title: String, subtitle: String? = nil) {
+        guard bannerQueue.numberOfBanners == 0 else { return }
+        let banner = FloatingNotificationBanner(title: title, subtitle: subtitle,
+                                                titleFont: .systemFont(ofSize: 17, weight: .medium),
+                                                subtitleFont: subtitle != nil ?
+                                                    .systemFont(ofSize: 14, weight: .regular) : nil,
+                                                style: .warning)
+        
+        banner.show(bannerPosition: .top,
+                    queue: bannerQueue,
+                    edgeInsets: UIEdgeInsets(top: 15, left: 15, bottom: 0, right: 15),
+                    cornerRadius: 10,
+                    shadowColor: .primaryText,
+                    shadowOpacity: 0.3,
+                    shadowBlurRadius: 10)
+    }
 }
-
