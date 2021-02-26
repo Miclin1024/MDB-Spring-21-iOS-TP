@@ -6,13 +6,31 @@
 //
 
 import Foundation
+import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 typealias EventID = String
 
-struct Event {
+struct Event: Codable {
     
     @DocumentID var id: EventID?
     
+    var name: String
     
+    var description: String
+    
+    var photoURL: String
+    
+    var startTimeStamp: Timestamp
+    
+    var creator: UserID
+    
+    var rsvpUsers: [UserID]
+    
+    var startDate: Date {
+        get {
+            let tsDate = startTimeStamp.dateValue()
+            return tsDate
+        }
+    }
 }

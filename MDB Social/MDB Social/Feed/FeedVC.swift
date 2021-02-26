@@ -23,6 +23,7 @@ class FeedVC: UIViewController {
     
     override func viewDidLoad() {
         view.addSubview(signOutButton)
+        
         signOutButton.center = view.center
         signOutButton.addTarget(self, action: #selector(didTapSignOut(_:)), for: .touchUpInside)
     }

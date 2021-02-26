@@ -8,9 +8,11 @@
 import Foundation
 import FirebaseFirestoreSwift
 
+typealias UserID = String
+
 struct User: Codable {
     
-    @DocumentID var uid: String?
+    @DocumentID var uid: UserID?
     
     var username: String
     
