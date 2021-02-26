@@ -25,6 +25,7 @@
 		1AF3865C25E8403E0006AE59 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3865B25E8403E0006AE59 /* AuthTextField.swift */; };
 		1AF3865F25E855BE0006AE59 /* UIColor+ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3865E25E855BE0006AE59 /* UIColor+ColorScheme.swift */; };
 		1AF3867E25E877B40006AE59 /* LoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3867D25E877B40006AE59 /* LoadingButton.swift */; };
+		1AF3868125E88AA20006AE59 /* FIRDatabaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3868025E88AA20006AE59 /* FIRDatabaseRequest.swift */; };
 		88D1856E3E3B7E97C54E6FB3 /* Pods_MDB_Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E51BF3FE48C081C2540BE42E /* Pods_MDB_Social.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		1AF3865B25E8403E0006AE59 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
 		1AF3865E25E855BE0006AE59 /* UIColor+ColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+ColorScheme.swift"; sourceTree = "<group>"; };
 		1AF3867D25E877B40006AE59 /* LoadingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButton.swift; sourceTree = "<group>"; };
+		1AF3868025E88AA20006AE59 /* FIRDatabaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIRDatabaseRequest.swift; sourceTree = "<group>"; };
 		97EDB17FB89D773DE44696EF /* Pods-MDB Social.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDB Social.debug.xcconfig"; path = "Target Support Files/Pods-MDB Social/Pods-MDB Social.debug.xcconfig"; sourceTree = "<group>"; };
 		BC2F19D1A2D8BB347835EFD1 /* Pods-MDB Social.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDB Social.release.xcconfig"; path = "Target Support Files/Pods-MDB Social/Pods-MDB Social.release.xcconfig"; sourceTree = "<group>"; };
 		E51BF3FE48C081C2540BE42E /* Pods_MDB_Social.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MDB_Social.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +117,7 @@
 				1AF3862425E816540006AE59 /* User.swift */,
 				1AF3863F25E81A9E0006AE59 /* AuthProvider.swift */,
 				1AF3864225E81C4A0006AE59 /* Event.swift */,
+				1AF3868025E88AA20006AE59 /* FIRDatabaseRequest.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				1AF385F225E812170006AE59 /* AppDelegate.swift in Sources */,
 				1AF3864325E81C4A0006AE59 /* Event.swift in Sources */,
 				1AF3865225E83C1A0006AE59 /* FeedNavigationVC.swift in Sources */,
+				1AF3868125E88AA20006AE59 /* FIRDatabaseRequest.swift in Sources */,
 				1AF385F425E812170006AE59 /* SceneDelegate.swift in Sources */,
 				1AF3865925E83E720006AE59 /* UIColor+Hex.swift in Sources */,
 				1AF3865C25E8403E0006AE59 /* AuthTextField.swift in Sources */,

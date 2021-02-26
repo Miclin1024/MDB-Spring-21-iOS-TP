@@ -13,7 +13,7 @@ typealias EventID = String
 
 struct Event: Codable {
     
-    @DocumentID var id: EventID?
+    @DocumentID var id: EventID? = UUID().uuidString
     
     var name: String
     

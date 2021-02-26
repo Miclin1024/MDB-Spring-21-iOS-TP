@@ -67,6 +67,8 @@ class FIRAuthProvider {
         }
     }
     
+    /* TODO: Firebase sign up handler, add user to firestore */
+    
     func isSignedIn() -> Bool {
         return auth.currentUser != nil
     }
