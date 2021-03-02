@@ -66,6 +66,15 @@ class SigninVC: UIViewController {
         return btn
     }()
     
+    private let signUpActionLabel: HorizontalActionLabel = {
+        let actionLabel = HorizontalActionLabel(
+            label: "Don't have an account?",
+            buttonTitle: "Sign Up")
+        
+        actionLabel.translatesAutoresizingMaskIntoConstraints = false
+        return actionLabel
+    }()
+    
     private let contentEdgeInset = UIEdgeInsets(top: 120, left: 40, bottom: 30, right: 40)
     
     private let signinButtonHeight: CGFloat = 44.0
@@ -117,6 +126,14 @@ class SigninVC: UIViewController {
         signinButton.layer.cornerRadius = signinButtonHeight / 2
         
         signinButton.addTarget(self, action: #selector(didTapSignin(_:)), for: .touchUpInside)
+        
+        view.addSubview(signUpActionLabel)
+        NSLayoutConstraint.activate([
+            signUpActionLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            signUpActionLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
+        ])
+        
+        signUpActionLabel.addTarget(self, action: #selector(didTapSignUp(_:)), for: .touchUpInside)
     }
 
     @objc func didTapSignin(_ sender: UIButton) {
@@ -169,7 +186,11 @@ class SigninVC: UIViewController {
         }
     }
     
-    func showErrorBanner(withTitle title: String, subtitle: String? = nil) {
+    @objc private func didTapSignUp(_ sender: UIButton) {
+        
+    }
+    
+    private func showErrorBanner(withTitle title: String, subtitle: String? = nil) {
         guard bannerQueue.numberOfBanners == 0 else { return }
         let banner = FloatingNotificationBanner(title: title, subtitle: subtitle,
                                                 titleFont: .systemFont(ofSize: 17, weight: .medium),
