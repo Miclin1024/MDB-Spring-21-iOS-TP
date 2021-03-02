@@ -125,7 +125,7 @@ class SigninVC: UIViewController {
         
         signinButton.layer.cornerRadius = signinButtonHeight / 2
         
-        signinButton.addTarget(self, action: #selector(didTapSignin(_:)), for: .touchUpInside)
+        signinButton.addTarget(self, action: #selector(didTapSignIn(_:)), for: .touchUpInside)
         
         view.addSubview(signUpActionLabel)
         NSLayoutConstraint.activate([
@@ -136,7 +136,7 @@ class SigninVC: UIViewController {
         signUpActionLabel.addTarget(self, action: #selector(didTapSignUp(_:)), for: .touchUpInside)
     }
 
-    @objc func didTapSignin(_ sender: UIButton) {
+    @objc func didTapSignIn(_ sender: UIButton) {
         guard let email = emailTextField.text, email != "" else {
             showErrorBanner(withTitle: "Missing email",
                             subtitle: "Please provide an email")
