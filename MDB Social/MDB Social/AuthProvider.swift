@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseAuth
+import Firebase
 import FirebaseFirestore
 
 class FIRAuthProvider {
@@ -57,7 +58,7 @@ class FIRAuthProvider {
                 }
                 return
             }
-            
+            Event(id: <#T##EventID?#>, name: <#T##String#>, description: <#T##String#>, photoURL: <#T##String#>, startTimeStamp: <#T##Timestamp#>, creator: <#T##UserID#>, rsvpUsers: <#T##[UserID]#>)
             guard let authResult = authResult else {
                 completion?(.failure(.internalError))
                 return

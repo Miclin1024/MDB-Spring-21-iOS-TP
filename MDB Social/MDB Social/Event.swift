@@ -25,7 +25,7 @@ struct Event: Codable {
     
     var creator: UserID
     
-    var rsvpUsers: [UserID]
+    var rsvpUsers: [UserID] = []
     
     var startDate: Date {
         get {

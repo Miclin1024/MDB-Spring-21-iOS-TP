@@ -1,0 +1,515 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1AAD347225F71A09003BA4BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD347125F71A09003BA4BA /* AppDelegate.swift */; };
+		1AAD347425F71A09003BA4BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD347325F71A09003BA4BA /* SceneDelegate.swift */; };
+		1AAD347925F71A09003BA4BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAD347725F71A09003BA4BA /* Main.storyboard */; };
+		1AAD347B25F71A0D003BA4BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AAD347A25F71A0D003BA4BA /* Assets.xcassets */; };
+		1AAD347E25F71A0D003BA4BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAD347C25F71A0D003BA4BA /* LaunchScreen.storyboard */; };
+		1AAD348C25F71B17003BA4BA /* RollCallVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD348B25F71B17003BA4BA /* RollCallVC.swift */; };
+		1AAD349525F71B85003BA4BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD349425F71B85003BA4BA /* AppDelegate.swift */; };
+		1AAD349725F71B85003BA4BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD349625F71B85003BA4BA /* SceneDelegate.swift */; };
+		1AAD349925F71B85003BA4BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD349825F71B85003BA4BA /* ViewController.swift */; };
+		1AAD349C25F71B85003BA4BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAD349A25F71B85003BA4BA /* Main.storyboard */; };
+		1AAD349E25F71B88003BA4BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AAD349D25F71B88003BA4BA /* Assets.xcassets */; };
+		1AAD34A125F71B88003BA4BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AAD349F25F71B88003BA4BA /* LaunchScreen.storyboard */; };
+		1AAD34AB25F71BCE003BA4BA /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD34A925F71BCE003BA4BA /* ResultVC.swift */; };
+		1AAD34AC25F71BCE003BA4BA /* RollCallVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAD34AA25F71BCE003BA4BA /* RollCallVC.swift */; };
+		1ABEF5F725FB2D46002E6A06 /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABEF5F625FB2D46002E6A06 /* ResultVC.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1AAD346E25F71A09003BA4BA /* SimpleRollCall-IB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SimpleRollCall-IB.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AAD347125F71A09003BA4BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1AAD347325F71A09003BA4BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1AAD347825F71A09003BA4BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1AAD347A25F71A0D003BA4BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1AAD347D25F71A0D003BA4BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1AAD347F25F71A0D003BA4BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AAD348B25F71B17003BA4BA /* RollCallVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollCallVC.swift; sourceTree = "<group>"; };
+		1AAD349225F71B85003BA4BA /* SimpleRollCall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleRollCall.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AAD349425F71B85003BA4BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1AAD349625F71B85003BA4BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1AAD349825F71B85003BA4BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1AAD349B25F71B85003BA4BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1AAD349D25F71B88003BA4BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1AAD34A025F71B88003BA4BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1AAD34A225F71B88003BA4BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AAD34A925F71BCE003BA4BA /* ResultVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultVC.swift; path = "../../../Hackshop 1/SimpleRollCall/SimpleRollCall/ResultVC.swift"; sourceTree = "<group>"; };
+		1AAD34AA25F71BCE003BA4BA /* RollCallVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RollCallVC.swift; path = "../../../Hackshop 1/SimpleRollCall/SimpleRollCall/RollCallVC.swift"; sourceTree = "<group>"; };
+		1ABEF5F625FB2D46002E6A06 /* ResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1AAD346B25F71A09003BA4BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AAD348F25F71B85003BA4BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1AAD346525F71A09003BA4BA = {
+			isa = PBXGroup;
+			children = (
+				1AAD347025F71A09003BA4BA /* SimpleRollCall-IB */,
+				1AAD349325F71B85003BA4BA /* SimpleRollCall */,
+				1AAD346F25F71A09003BA4BA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1AAD346F25F71A09003BA4BA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1AAD346E25F71A09003BA4BA /* SimpleRollCall-IB.app */,
+				1AAD349225F71B85003BA4BA /* SimpleRollCall.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1AAD347025F71A09003BA4BA /* SimpleRollCall-IB */ = {
+			isa = PBXGroup;
+			children = (
+				1AAD348825F71A41003BA4BA /* Support Files */,
+				1AAD347725F71A09003BA4BA /* Main.storyboard */,
+				1AAD347A25F71A0D003BA4BA /* Assets.xcassets */,
+				1AAD348B25F71B17003BA4BA /* RollCallVC.swift */,
+				1ABEF5F625FB2D46002E6A06 /* ResultVC.swift */,
+			);
+			path = "SimpleRollCall-IB";
+			sourceTree = "<group>";
+		};
+		1AAD348825F71A41003BA4BA /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1AAD347125F71A09003BA4BA /* AppDelegate.swift */,
+				1AAD347325F71A09003BA4BA /* SceneDelegate.swift */,
+				1AAD347C25F71A0D003BA4BA /* LaunchScreen.storyboard */,
+				1AAD347F25F71A0D003BA4BA /* Info.plist */,
+			);
+			name = "Support Files";
+			sourceTree = "<group>";
+		};
+		1AAD349325F71B85003BA4BA /* SimpleRollCall */ = {
+			isa = PBXGroup;
+			children = (
+				1AAD34A825F71B98003BA4BA /* Support Files */,
+				1AAD34A925F71BCE003BA4BA /* ResultVC.swift */,
+				1AAD34AA25F71BCE003BA4BA /* RollCallVC.swift */,
+				1AAD349825F71B85003BA4BA /* ViewController.swift */,
+				1AAD349A25F71B85003BA4BA /* Main.storyboard */,
+				1AAD349D25F71B88003BA4BA /* Assets.xcassets */,
+			);
+			path = SimpleRollCall;
+			sourceTree = "<group>";
+		};
+		1AAD34A825F71B98003BA4BA /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1AAD349425F71B85003BA4BA /* AppDelegate.swift */,
+				1AAD349625F71B85003BA4BA /* SceneDelegate.swift */,
+				1AAD349F25F71B88003BA4BA /* LaunchScreen.storyboard */,
+				1AAD34A225F71B88003BA4BA /* Info.plist */,
+			);
+			name = "Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1AAD346D25F71A09003BA4BA /* SimpleRollCall-IB */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1AAD348225F71A0D003BA4BA /* Build configuration list for PBXNativeTarget "SimpleRollCall-IB" */;
+			buildPhases = (
+				1AAD346A25F71A09003BA4BA /* Sources */,
+				1AAD346B25F71A09003BA4BA /* Frameworks */,
+				1AAD346C25F71A09003BA4BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SimpleRollCall-IB";
+			productName = "SimpleRollCall-IB";
+			productReference = 1AAD346E25F71A09003BA4BA /* SimpleRollCall-IB.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1AAD349125F71B85003BA4BA /* SimpleRollCall */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1AAD34A325F71B88003BA4BA /* Build configuration list for PBXNativeTarget "SimpleRollCall" */;
+			buildPhases = (
+				1AAD348E25F71B85003BA4BA /* Sources */,
+				1AAD348F25F71B85003BA4BA /* Frameworks */,
+				1AAD349025F71B85003BA4BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimpleRollCall;
+			productName = SimpleRollCall;
+			productReference = 1AAD349225F71B85003BA4BA /* SimpleRollCall.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1AAD346625F71A09003BA4BA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					1AAD346D25F71A09003BA4BA = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					1AAD349125F71B85003BA4BA = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = 1AAD346925F71A09003BA4BA /* Build configuration list for PBXProject "SimpleRollCall-IB" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1AAD346525F71A09003BA4BA;
+			productRefGroup = 1AAD346F25F71A09003BA4BA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1AAD346D25F71A09003BA4BA /* SimpleRollCall-IB */,
+				1AAD349125F71B85003BA4BA /* SimpleRollCall */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1AAD346C25F71A09003BA4BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AAD347E25F71A0D003BA4BA /* LaunchScreen.storyboard in Resources */,
+				1AAD347B25F71A0D003BA4BA /* Assets.xcassets in Resources */,
+				1AAD347925F71A09003BA4BA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AAD349025F71B85003BA4BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AAD34A125F71B88003BA4BA /* LaunchScreen.storyboard in Resources */,
+				1AAD349E25F71B88003BA4BA /* Assets.xcassets in Resources */,
+				1AAD349C25F71B85003BA4BA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1AAD346A25F71A09003BA4BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AAD347225F71A09003BA4BA /* AppDelegate.swift in Sources */,
+				1ABEF5F725FB2D46002E6A06 /* ResultVC.swift in Sources */,
+				1AAD347425F71A09003BA4BA /* SceneDelegate.swift in Sources */,
+				1AAD348C25F71B17003BA4BA /* RollCallVC.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AAD348E25F71B85003BA4BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AAD349925F71B85003BA4BA /* ViewController.swift in Sources */,
+				1AAD34AB25F71BCE003BA4BA /* ResultVC.swift in Sources */,
+				1AAD349525F71B85003BA4BA /* AppDelegate.swift in Sources */,
+				1AAD34AC25F71BCE003BA4BA /* RollCallVC.swift in Sources */,
+				1AAD349725F71B85003BA4BA /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1AAD347725F71A09003BA4BA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1AAD347825F71A09003BA4BA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1AAD347C25F71A0D003BA4BA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1AAD347D25F71A0D003BA4BA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		1AAD349A25F71B85003BA4BA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1AAD349B25F71B85003BA4BA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1AAD349F25F71B88003BA4BA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1AAD34A025F71B88003BA4BA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1AAD348025F71A0D003BA4BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1AAD348125F71A0D003BA4BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1AAD348325F71A0D003BA4BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y2JVY29H4R;
+				INFOPLIST_FILE = "SimpleRollCall-IB/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.mdb.SimpleRollCall-IB";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1AAD348425F71A0D003BA4BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y2JVY29H4R;
+				INFOPLIST_FILE = "SimpleRollCall-IB/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.mdb.SimpleRollCall-IB";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1AAD34A425F71B88003BA4BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y2JVY29H4R;
+				INFOPLIST_FILE = SimpleRollCall/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.mdb.SimpleRollCall;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1AAD34A525F71B88003BA4BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y2JVY29H4R;
+				INFOPLIST_FILE = SimpleRollCall/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.mdb.SimpleRollCall;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1AAD346925F71A09003BA4BA /* Build configuration list for PBXProject "SimpleRollCall-IB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AAD348025F71A0D003BA4BA /* Debug */,
+				1AAD348125F71A0D003BA4BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1AAD348225F71A0D003BA4BA /* Build configuration list for PBXNativeTarget "SimpleRollCall-IB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AAD348325F71A0D003BA4BA /* Debug */,
+				1AAD348425F71A0D003BA4BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1AAD34A325F71B88003BA4BA /* Build configuration list for PBXNativeTarget "SimpleRollCall" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AAD34A425F71B88003BA4BA /* Debug */,
+				1AAD34A525F71B88003BA4BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1AAD346625F71A09003BA4BA /* Project object */;
+}

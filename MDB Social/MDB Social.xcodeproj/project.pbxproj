@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A85686E25FDB44D00FD7180 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 1A85686D25FDB44D00FD7180 /* Podfile */; };
 		1AF03DC425EDC18500E3FF80 /* HorizontalActionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF03DC325EDC18500E3FF80 /* HorizontalActionLabel.swift */; };
 		1AF385F225E812170006AE59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF385F125E812170006AE59 /* AppDelegate.swift */; };
 		1AF385F425E812170006AE59 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF385F325E812170006AE59 /* SceneDelegate.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A85686D25FDB44D00FD7180 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		1AF03DC325EDC18500E3FF80 /* HorizontalActionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalActionLabel.swift; sourceTree = "<group>"; };
 		1AF385EE25E812170006AE59 /* MDB Social.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MDB Social.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AF385F125E812170006AE59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 		1AF385E525E812170006AE59 = {
 			isa = PBXGroup;
 			children = (
+				1A85686D25FDB44D00FD7180 /* Podfile */,
 				1AF385F025E812170006AE59 /* MDB Social */,
 				1AF385EF25E812170006AE59 /* Products */,
 				3EC272BECC8A6647DC74B393 /* Pods */,
@@ -240,6 +243,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A85686E25FDB44D00FD7180 /* Podfile in Resources */,
 				1AF385FE25E8121A0006AE59 /* LaunchScreen.storyboard in Resources */,
 				1AF3864825E8378D0006AE59 /* Main.storyboard in Resources */,
 				1AF3860725E814990006AE59 /* GoogleService-Info.plist in Resources */,

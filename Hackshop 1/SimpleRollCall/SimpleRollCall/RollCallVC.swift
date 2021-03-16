@@ -13,7 +13,7 @@ import UIKit
 class RollCallVC: UIViewController {
     
     // A constant holding all the names.
-    let names = ["Neel", "Yi", "Jennessa", "Suraj", "Rithwik", "Eileen", "Jacob", "Harrison"]
+    let names = ["Neel", "Jennessa", "Suraj", "Rithwik", "Eileen", "Jacob", "Harrison"]
     
     // A variable that stores the names that are yet to be called.
     var namesToCall: [String] = []

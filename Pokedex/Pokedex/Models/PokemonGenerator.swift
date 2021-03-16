@@ -14,13 +14,15 @@ class PokemonGenerator {
     static let shared = PokemonGenerator()
     
     func getPokemonArray() -> [Pokemon] {
-        guard let path = Bundle.main.path(forResource: "pokemons", ofType: "json") else { print("Couldn't find Pokemon filepath")
+        guard let url = Bundle.main.url(forResource: "pokemons", withExtension: "json") else { print("Couldn't find Pokemon filepath")
             return []
         }
-        guard let jsonData = try? NSData(contentsOfFile: path) as Data else {
+        guard let jsonData = try? Data(contentsOf: url) else {
             print("Couldn't load file")
             return []
         }
+        
+        
         
         let decoder = JSONDecoder()
         

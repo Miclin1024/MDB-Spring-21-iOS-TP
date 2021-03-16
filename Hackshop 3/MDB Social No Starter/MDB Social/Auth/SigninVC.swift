@@ -137,7 +137,40 @@ class SigninVC: UIViewController {
     }
 
     @objc func didTapSignIn(_ sender: UIButton) {
+        guard let email = emailTextField.text, email != "" else {
+            showErrorBanner(withTitle: "Missing email", subtitle: "Please provide an email")
+            return
+        }
         
+        guard let password = passwordTextField.text, password != "" else {
+            return
+        }
+        
+        signinButton.showLoading()
+        FIRAuthProvider.shared.signIn(withEmail: email, password: password) { [weak self] result in
+            guard let self = self else { return }
+            
+            defer {
+                self.signinButton.hideLoading()
+            }
+            
+            switch result {
+            case .success(let _):
+                guard let window = UIApplication.shared.windows.filter({ $0.isKeyWindow }).first else { return }
+                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+                window.rootViewController = vc
+                window.makeKeyAndVisible()
+            case .failure(let error):
+                switch error {
+                case .userNotFound:
+                    self.showErrorBanner(withTitle: "User not found", subtitle: "Please provide an email")
+                case .wrongPassword:
+                    self.showErrorBanner(withTitle: "User not found", subtitle: "Please provide an email")
+                default:
+                    self.showErrorBanner(withTitle: "User not found", subtitle: "Please provide an email")
+                }
+            }
+        }
     }
     
     @objc private func didTapSignUp(_ sender: UIButton) {
