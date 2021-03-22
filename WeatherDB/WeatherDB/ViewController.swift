@@ -12,6 +12,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        WeatherRequest.shared.weather(for: "London") { result in
+            switch result {
+            case .success(let weather):
+                print(weather)
+            case .failure(_):
+                print("Failed")
+            }
+            
+        }
     }
 
 
