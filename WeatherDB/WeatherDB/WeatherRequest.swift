@@ -37,7 +37,7 @@ class WeatherRequest {
                  completion: ((Result<Weather, RequestError>)->Void)? = nil) {
         var urlComponents = URLComponents(url: currWeatherURL, resolvingAgainstBaseURL: true)!
         
-        let queryDictionary = [
+        let queryDictionary: [String: String] = [
             "q": [city, state, country].compactMap{ $0 }.joined(separator: ", "),
             "appid": key,
             "units": unit.rawValue
@@ -46,7 +46,7 @@ class WeatherRequest {
             URLQueryItem(name: $0, value: $1)
         }
         guard let url = urlComponents.url else {
-            print("Unable to create URL")
+            print("Cannot create URL")
             return
         }
         
@@ -55,11 +55,26 @@ class WeatherRequest {
     
     func weather(at location: CLLocation,
                  completion: ((Result<Weather, RequestError>)->Void)? = nil) {
+        var urlComponents = URLComponents(url: currWeatherURL, resolvingAgainstBaseURL: true)!
         
+        let queryDictionary: [String: String] = [
+            "lat": String(location.coordinate.latitude),
+            "lon": String(location.coordinate.longitude),
+            "appid": key,
+            "units": unit.rawValue
+        ]
+        urlComponents.queryItems = queryDictionary.map {
+            URLQueryItem(name: $0, value: $1)
+        }
+        guard let url = urlComponents.url else {
+            print("Cannot create URL")
+            return
+        }
+        
+        sendRequest(url: url, completion: completion)
     }
     
     func sendRequest(url: URL, completion: ((Result<Weather, RequestError>)->Void)?) {
-        print(url)
         let dataTask = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let response = response as? HTTPURLResponse,
                   response.statusCode == 200, let data = data, error == nil else {

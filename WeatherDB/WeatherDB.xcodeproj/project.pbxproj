@@ -16,6 +16,7 @@
 		1AF49D4F2608144D0090ECF6 /* Secret.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1AF49D4E2608144D0090ECF6 /* Secret.plist */; };
 		1AF49D53260817470090ECF6 /* WeatherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF49D52260817470090ECF6 /* WeatherRequest.swift */; };
 		1AF49D5626081BD60090ECF6 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF49D5526081BD60090ECF6 /* Weather.swift */; };
+		1AF49D5926086B130090ECF6 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF49D5826086B130090ECF6 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		1AF49D4E2608144D0090ECF6 /* Secret.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secret.plist; sourceTree = "<group>"; };
 		1AF49D52260817470090ECF6 /* WeatherRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRequest.swift; sourceTree = "<group>"; };
 		1AF49D5526081BD60090ECF6 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		1AF49D5826086B130090ECF6 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			children = (
 				1AF49D52260817470090ECF6 /* WeatherRequest.swift */,
 				1AF49D5526081BD60090ECF6 /* Weather.swift */,
+				1AF49D5826086B130090ECF6 /* LocationManager.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 			files = (
 				1AF49D53260817470090ECF6 /* WeatherRequest.swift in Sources */,
 				1A0BFA342606AA0900EC0768 /* ViewController.swift in Sources */,
+				1AF49D5926086B130090ECF6 /* LocationManager.swift in Sources */,
 				1A0BFA302606AA0900EC0768 /* AppDelegate.swift in Sources */,
 				1A0BFA322606AA0900EC0768 /* SceneDelegate.swift in Sources */,
 				1AF49D5626081BD60090ECF6 /* Weather.swift in Sources */,

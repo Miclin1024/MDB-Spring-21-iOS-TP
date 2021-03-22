@@ -62,5 +62,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>WeatherDB uses location service to provide weather infomation at the current location.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>WeatherDB uses location service to provide weather infomation at the current location.</string>
 </dict>
 </plist>
