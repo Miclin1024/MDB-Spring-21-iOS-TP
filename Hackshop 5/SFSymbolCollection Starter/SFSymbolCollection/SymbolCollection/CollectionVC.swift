@@ -9,15 +9,9 @@ import UIKit
 
 class CollectionVC: UIViewController {
     
-    private let collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.minimumLineSpacing = 30
-        layout.minimumInteritemSpacing = 30
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .clear
-        collectionView.register(SymbolCollectionCell.self, forCellWithReuseIdentifier: SymbolCollectionCell.reuseIdentifier)
-        return collectionView
-    }()
+    private var collectionView: UICollectionView!
+    
+    typealias Section = SymbolCategories
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,42 +24,42 @@ class CollectionVC: UIViewController {
         collectionView.allowsSelection = true
         collectionView.allowsMultipleSelection = false
         
-        collectionView.dataSource = self
-        collectionView.delegate = self
-    }
-}
-
-extension CollectionVC: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return SymbolProvider.symbols.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let symbol = SymbolProvider.symbols[indexPath.item]
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SymbolCollectionCell.reuseIdentifier, for: indexPath) as! SymbolCollectionCell
-        cell.symbol = symbol
-        return cell
-    }
+    
 }
 
-extension CollectionVC: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 80, height: 100)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
-        let symbol = SymbolProvider.symbols[indexPath.item]
+extension CollectionVC {
+    func createLayout() -> UICollectionViewLayout {
+        let config = UICollectionViewCompositionalLayoutConfiguration()
+        config.interSectionSpacing = 40
         
-        return UIContextMenuConfiguration(identifier: indexPath as NSCopying, previewProvider: {
-            return SymbolPreviewVC(symbol: symbol)
-        }, actionProvider: { _ in
-            let okItem = UIAction(title: "OK", image: UIImage(systemName: "arrow.down.right.and.arrow.up.left"), identifier: nil, discoverabilityTitle: nil, handler: { _ in})
-            return UIMenu(title: "", image: nil, identifier: nil, children: [okItem])
-        })
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Selected")
+        let layout = UICollectionViewCompositionalLayout(sectionProvider: {
+            (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
+            
+            guard let category = Section(index: sectionIndex) else { fatalError("Unknown section kind")}
+            
+            let itemsPerRow = 4
+            let rowHeight: CGFloat = 70
+            let rowSpacing: CGFloat = 35
+            
+            let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0/CGFloat(itemsPerRow)), heightDimension: .absolute(rowHeight)))
+            item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 3, bottom: 0, trailing: 3)
+            
+            let row = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(rowHeight)), subitems: [item])
+            
+            let rowGroupEstHeight = rowHeight * CGFloat(category.numberOfRows()) + rowSpacing * CGFloat(category.numberOfRows() - 1)
+            let rowGroup = NSCollectionLayoutGroup.vertical(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(rowGroupEstHeight)), subitems: [row])
+            
+            let containerGroup = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(rowGroupEstHeight)), subitems: [rowGroup])
+            
+            let section = NSCollectionLayoutSection(group: containerGroup)
+            section.orthogonalScrollingBehavior = .groupPaging
+            
+            return section
+            
+        }, configuration: config)
+        
+        return layout
     }
 }
-
