@@ -15,6 +15,7 @@ class FIRDatabaseRequest {
     let db = Firestore.firestore()
     
     func setUser(_ user: User, completion: (()->Void)?) {
+        db.collection(<#T##collectionPath: String##String#>)
         guard let uid = user.uid else { return }
         do {
             try db.collection("users").document(uid).setData(from: user)

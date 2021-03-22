@@ -22,6 +22,9 @@ class WeatherRequest {
     
     let currWeatherURL = URL(string: "https://api.openweathermap.org/data/2.5/weather")!
     
+    /**
+     * The OpenWeather API key. Must be filled out in Secret.plist.
+     */
     let key: String = {
         let url = Bundle.main.url(forResource: "Secret", withExtension: "plist")
         let dictionary = NSDictionary(contentsOf: url!)
@@ -31,8 +34,14 @@ class WeatherRequest {
         return val
     }()
     
+    /**
+     * Units of measurement.
+     */
     var unit: Unit = .imperial
     
+    /**
+     * Request the one-time delivery of weather data for the city.
+     */
     func weather(for city: String, state: String? = nil, country: String? = nil,
                  completion: ((Result<Weather, RequestError>)->Void)? = nil) {
         var urlComponents = URLComponents(url: currWeatherURL, resolvingAgainstBaseURL: true)!
@@ -53,6 +62,9 @@ class WeatherRequest {
         sendRequest(url: url, completion: completion)
     }
     
+    /**
+     * Request the one-time delivery of weather data for the location.
+     */
     func weather(at location: CLLocation,
                  completion: ((Result<Weather, RequestError>)->Void)? = nil) {
         var urlComponents = URLComponents(url: currWeatherURL, resolvingAgainstBaseURL: true)!
@@ -74,7 +86,7 @@ class WeatherRequest {
         sendRequest(url: url, completion: completion)
     }
     
-    func sendRequest(url: URL, completion: ((Result<Weather, RequestError>)->Void)?) {
+    private func sendRequest(url: URL, completion: ((Result<Weather, RequestError>)->Void)?) {
         let dataTask = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let response = response as? HTTPURLResponse,
                   response.statusCode == 200, let data = data, error == nil else {
