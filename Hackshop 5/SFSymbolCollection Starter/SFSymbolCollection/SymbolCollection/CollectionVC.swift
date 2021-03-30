@@ -12,6 +12,8 @@ class CollectionVC: UIViewController {
     private var collectionView: UICollectionView!
     
     typealias Section = SymbolCategories
+    
+    static let headerElementKind = "symbol-header-kind"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,10 +25,7 @@ class CollectionVC: UIViewController {
 
         collectionView.allowsSelection = true
         collectionView.allowsMultipleSelection = false
-        
     }
-    
-    
 }
 
 extension CollectionVC {
