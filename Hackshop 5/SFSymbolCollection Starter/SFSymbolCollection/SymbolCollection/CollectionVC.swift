@@ -31,33 +31,48 @@ class CollectionVC: UIViewController {
 
 extension CollectionVC {
     func createLayout() -> UICollectionViewLayout {
+        
         let config = UICollectionViewCompositionalLayoutConfiguration()
         config.interSectionSpacing = 40
         
         let layout = UICollectionViewCompositionalLayout(sectionProvider: {
             (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
-            
-            guard let category = Section(index: sectionIndex) else { fatalError("Unknown section kind")}
+            guard let category = Section(index: sectionIndex) else { fatalError("Unknown section kind") }
             
             let itemsPerRow = 4
-            let rowHeight: CGFloat = 70
+            let rowHeight: CGFloat = 70.0
             let rowSpacing: CGFloat = 35
+            let headerEstimatedHeight: CGFloat = 44
             
-            let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0/CGFloat(itemsPerRow)), heightDimension: .absolute(rowHeight)))
+            let item = NSCollectionLayoutItem(
+                layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0 / CGFloat(itemsPerRow)),
+                                                   heightDimension: .absolute(rowHeight)))
             item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 3, bottom: 0, trailing: 3)
             
-            let row = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(rowHeight)), subitems: [item])
+            let row = NSCollectionLayoutGroup.horizontal(
+                layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                   heightDimension: .absolute(rowHeight)), subitems: [item])
             
-            let rowGroupEstHeight = rowHeight * CGFloat(category.numberOfRows()) + rowSpacing * CGFloat(category.numberOfRows() - 1)
-            let rowGroup = NSCollectionLayoutGroup.vertical(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(rowGroupEstHeight)), subitems: [row])
+            let rowGroupEstimatedHeight = rowHeight * CGFloat(category.numberOfRows()) +
+                rowSpacing * CGFloat(category.numberOfRows() - 1)
+            let rowGroup = NSCollectionLayoutGroup.vertical(
+                layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(rowGroupEstimatedHeight)),
+                subitem: row, count: category.numberOfRows())
             
-            let containerGroup = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(rowGroupEstHeight)), subitems: [rowGroup])
+            rowGroup.interItemSpacing = .fixed(rowSpacing)
+            
+            let containerGroup = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.85), heightDimension: .estimated(headerEstimatedHeight + rowHeight * CGFloat(category.numberOfRows()))), subitems: [rowGroup])
             
             let section = NSCollectionLayoutSection(group: containerGroup)
             section.orthogonalScrollingBehavior = .groupPaging
             
-            return section
+            let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
+                layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalHeight(1.0), heightDimension: .estimated(headerEstimatedHeight)),
+                elementKind: SymbolCollectionVC.headerElementKind, alignment: .topLeading)
             
+            section.boundarySupplementaryItems = [sectionHeader]
+            return section
+                    
         }, configuration: config)
         
         return layout
