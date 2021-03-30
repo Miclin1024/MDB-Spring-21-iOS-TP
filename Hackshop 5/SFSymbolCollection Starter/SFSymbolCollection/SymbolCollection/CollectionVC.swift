@@ -67,7 +67,7 @@ extension CollectionVC {
             
             let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
                 layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalHeight(1.0), heightDimension: .estimated(headerEstimatedHeight)),
-                elementKind: SymbolCollectionVC.headerElementKind, alignment: .topLeading)
+                elementKind: CollectionVC.headerElementKind, alignment: .topLeading)
             
             section.boundarySupplementaryItems = [sectionHeader]
             return section
